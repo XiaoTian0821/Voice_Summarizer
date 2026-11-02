@@ -1,0 +1,163 @@
+/* ============================================================
+   AI Voice Summarizer – Custom Styles
+   Extends Bootstrap 5. Keep it simple and readable.
+   ============================================================ */
+
+/* ---- Navbar ------------------------------------------------ */
+.app-navbar {
+    background: linear-gradient(135deg, #1a237e 0%, #0d47a1 100%);
+}
+.app-navbar .navbar-brand {
+    font-size: 1.25rem;
+    letter-spacing: -0.5px;
+}
+.app-navbar .brand-text {
+    color: #fff;
+    font-weight: 700;
+}
+.app-navbar .nav-link {
+    color: rgba(255, 255, 255, 0.75);
+    transition: color 0.2s;
+}
+.app-navbar .nav-link:hover,
+.app-navbar .nav-link.active {
+    color: #fff;
+}
+.app-navbar .logout-link {
+    color: rgba(255, 255, 255, 0.75);
+}
+.app-navbar .logout-link:hover {
+    color: #ffcdd2;
+}
+
+/* ---- Auth pages (login / register) ------------------------- */
+.auth-body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(160deg, #0d47a1 0%, #1a237e 50%, #000000 100%);
+    padding: 1.5rem;
+}
+.auth-card {
+    width: 100%;
+    max-width: 420px;
+    border: none;
+    border-radius: 1rem;
+}
+
+/* ---- Stat cards -------------------------------------------- */
+.stat-card {
+    border-radius: 0.75rem;
+}
+.stat-card .stat-icon {
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+}
+
+/* ---- Quick action cards ------------------------------------ */
+.quick-action {
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    border-radius: 0.75rem;
+}
+.quick-action:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.12) !important;
+}
+
+/* ---- Drop zone --------------------------------------------- */
+.drop-zone {
+    transition: background 0.2s, border-color 0.2s;
+    cursor: pointer;
+}
+.drop-zone.drag-over {
+    background: #e3f2fd;
+    border-color: #0d47a1;
+}
+
+/* ---- Recording controls ----------------------------------- */
+.circle-btn {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    font-size: 1.1rem;
+}
+.circle-btn:disabled {
+    opacity: 0.4;
+}
+
+/* ---- Transcription area ----------------------------------- */
+.transcription-area {
+    font-family: "SF Mono", "Fira Mono", Consolas, "Courier New", monospace;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    resize: vertical;
+}
+
+/* ---- Pre-wrap text blocks --------------------------------- */
+.pre-wrap {
+    white-space: pre-wrap;
+    word-break: break-word;
+    line-height: 1.7;
+}
+
+/* ---- Tables ------------------------------------------------ */
+.table > thead > th {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--bs-secondary-color);
+    border-bottom: 2px solid var(--bs-border-color);
+}
+
+/* ---- Alerts ------------------------------------------------ */
+.alert {
+    border-radius: 0.5rem;
+}
+
+/* ---- Progress bar ------------------------------------------ */
+.progress {
+    border-radius: 0.25rem;
+}
+
+/* ---- Misc --------------------------------------------------- */
+.card {
+    border-radius: 0.75rem;
+}
+.card-header {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+/* Loading overlay (used on long operations) */
+.loading-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+.loading-overlay .spinner-border {
+    width: 3rem;
+    height: 3rem;
+}
+
+/* Prevent audio element from stretching */
+audio {
+    max-width: 100%;
+}
+
+/* Responsive tweaks */
+@media (max-width: 575.98px) {
+    .auth-card {
+        margin: 1rem;
+    }
+    .stat-card .stat-icon {
+        font-size: 1.4rem;
+    }
+}

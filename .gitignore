@@ -1,0 +1,9 @@
+# Ignore secrets and storage
+config/ai_config.php
+storage/
+*.log
+
+# PHP build artifacts
+.DS_Store
+Thumbs.db
+*.swp
