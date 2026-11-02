@@ -207,7 +207,16 @@ async function submitRecording() {
             headers: { 'X-CSRF-Token': window.CSRF_TOKEN },
             body:    fd,
         });
-        const data = await res.json();
+        const responseText = await res.text();
+        let data;
+        try {
+            data = JSON.parse(responseText);
+        } catch (parseError) {
+            throw new Error(
+                `Server returned an invalid response (${res.status}). ` +
+                'Check the PHP error log for details.'
+            );
+        }
         if (data.ok) {
             showRecordStatus('success',
                 `Transcription complete! <a href="summarize.php?id=${data.id}">Go to summarize &rarr;</a>`);

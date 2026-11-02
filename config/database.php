@@ -13,7 +13,7 @@
 define('DB_HOST',     '127.0.0.1');
 define('DB_NAME',     'ai_voice_summarizer');
 define('DB_USER',     'root');
-define('DB_PASS',     '');
+define('DB_PASS',     '123456');
 define('DB_CHARSET',  'utf8mb4');
 
 function db(): PDO {
