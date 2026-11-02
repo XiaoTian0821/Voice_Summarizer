@@ -98,7 +98,7 @@ curl_setopt_array($ch, [
     CURLOPT_POST          => true,
     CURLOPT_TIMEOUT       => 120,
     CURLOPT_HTTPHEADER    => [
-        "Authorization: Bearer {$apiKey}",
+        "Authorization: Bearer " . AI_API_KEY,
         "Content-Type: application/json",
     ],
     CURLOPT_POSTFIELDS    => json_encode([

@@ -91,7 +91,10 @@ function transcribe_audio_file(int $user_id, string $stored_filename): ?string {
     $apiKey = AI_API_KEY;
     if ($apiKey === 'sk-your-api-key-here') {
         ai_log("STT skipped: API key not configured.");
-        return null;
+        json_response([
+            'ok' => false,
+            'message' => 'Speech-to-text is not configured. Add your API key in config/ai_config.php.',
+        ], 503);
     }
 
     // Build multipart request
@@ -126,7 +129,7 @@ function transcribe_audio_file(int $user_id, string $stored_filename): ?string {
         CURLOPT_POSTFIELDS    => $body,
         CURLOPT_TIMEOUT       => 120,
         CURLOPT_HTTPHEADER    => [
-            "Authorization: Bearer {$apiKey}",
+            "Authorization: Bearer " . AI_API_KEY,
             "Content-Type: multipart/form-data; boundary={$boundary}",
         ],
     ]);

@@ -79,7 +79,7 @@ curl_setopt_array($ch, [
     CURLOPT_POSTFIELDS    => $body,
     CURLOPT_TIMEOUT       => 120,
     CURLOPT_HTTPHEADER    => [
-        "Authorization: Bearer {$apiKey}",
+        "Authorization: Bearer " . AI_API_KEY,
         "Content-Type: multipart/form-data; boundary={$boundary}",
     ],
 ]);
